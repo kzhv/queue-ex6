@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Queue
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите элементы очереди через пробел: ");
+            string q = Console.ReadLine();
+            string[] items = q.Split(' ');
+            queue_classe edt = new queue_classe();
+            for (int i = 0; i < items.Length; i++)
+            {
+                edt.InQ(items[i]);
+            }
+            while (!edt.IsEmpty())
+            {
+                Console.WriteLine(edt.OutQ());
+            }
+            Console.ReadKey();
+        }
+    }
+}
